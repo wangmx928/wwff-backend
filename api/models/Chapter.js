@@ -26,7 +26,7 @@ module.exports = {
         Chapter.create(_.assign({
             chapterName: 'University of Michigan'
         }, options), function(err, chapter) {
-            cb();
+            cb(chapter);
         });
     }
 };

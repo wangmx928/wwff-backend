@@ -6,9 +6,17 @@
 */
 
 module.exports = {
+    attributes: {
+        profileImg: {
+            type: 'string'
+        },
+        biography: {
+            type: 'string'
+        },
 
-  attributes: {
-
-  }
+        user: {
+            model: 'user'
+        }
+    }
 };
 

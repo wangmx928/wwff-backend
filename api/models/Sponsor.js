@@ -6,9 +6,25 @@
 */
 
 module.exports = {
+    attributes: {
+        firstName: {
+            type: 'string'
+        },
+        lastName: {
+            type: 'string'
+        },
 
-  attributes: {
+        donation: {
+            model: 'donation'
+        }
+    },
 
-  }
+    createTestSponsor: function(cb) {
+        Sponsor.create({
+            firstName: 'John',
+            lastName: 'Doe'
+        }, function(err, sponsor) {
+            cb(sponsor);
+        });
+    }
 };
-

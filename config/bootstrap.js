@@ -12,12 +12,18 @@ var async = require('async');
  */
 module.exports.bootstrap = function(cb) {
     if(process.env.NODE_ENV !== 'development') {
-        return cb();    
+        return cb();
     }
-    
+
     User.createTestUsers(function(users) {
-        Chapter.createTestChapter({ members: users }, function() {
-            cb();
+        Sponsor.createTestSponsor(function(sponsor) {
+            Donation.createTestDonation(users, sponsor, function() {
+                Chapter.createTestChapter({ members: users }, function(chapter) {
+                    Event.createTestEvents(users, chapter, function(events) {
+                        cb();
+                    });
+                });
+            });
         });
     });
 };

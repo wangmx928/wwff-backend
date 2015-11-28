@@ -1,16 +1,16 @@
 var waterlock = require('waterlock');
 
 /**
- * UserController.js
+ * AuthController
  *
  * @module      :: Controller
- * @description :: Provides the base user
+ * @description	:: Provides the base authentication
  *                 actions used to make waterlock work.
  *
  * @docs        :: http://waterlock.ninja/documentation
  */
 
-module.exports = waterlock.actions.user({
+module.exports = waterlock.waterlocked({
     /* e.g.
     action: function(req, res){
 

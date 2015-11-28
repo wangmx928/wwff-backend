@@ -11,8 +11,47 @@ module.exports = {
             type: 'string'
         },
 
+        eventStartTime: {
+            type: 'integer'
+        },
+
+        eventEndTime: {
+            type: 'datetime'
+        },
+
         chapter: {
             model: 'chapter'
+        },
+        organizer: {
+            model: 'user'
         }
+    },
+
+    createTestEvents: function(organizers, chapter, cb) {
+        Event.create([
+            {
+                eventName: 'Chillin With Bros',
+                eventStartTime: 1448641800000,
+                chapter: chapter,
+                organizer: organizers[0]
+            },
+            {
+                eventName: 'Getting Paid',
+                chapter: chapter,
+                organizer: organizers[0]
+            },
+            {
+                eventName: 'Walking the Dog',
+                chapter: chapter,
+                organizer: organizers[0]
+            },
+            {
+                eventName: 'Shooting Some Hoops',
+                chapter: chapter,
+                organizer: organizers[0]
+            }
+        ], function(err, events) {
+            cb(events);
+        });
     }
 };
