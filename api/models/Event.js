@@ -31,22 +31,25 @@ module.exports = {
         Event.create([
             {
                 eventName: 'Chillin With Bros',
-                eventStartTime: 1448641800000,
+                eventStartTime: 1448724006,
                 chapter: chapter,
                 organizer: organizers[0]
             },
             {
                 eventName: 'Getting Paid',
+                eventStartTime: 1448567100,
                 chapter: chapter,
                 organizer: organizers[0]
             },
             {
                 eventName: 'Walking the Dog',
+                eventStartTime: 1448638234,
                 chapter: chapter,
                 organizer: organizers[0]
             },
             {
                 eventName: 'Shooting Some Hoops',
+                eventStartTime: 1448726573,
                 chapter: chapter,
                 organizer: organizers[0]
             }
